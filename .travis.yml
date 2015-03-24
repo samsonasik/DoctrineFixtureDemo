@@ -9,7 +9,7 @@ install:
   - composer install --prefer-source
 
 before_script:
-  - mysql -e 'create database IF NOT EXISTS foobar-test;' -uroot
+  - mysql -e 'create database IF NOT EXISTS foobartest;' -uroot
 
 script:
   - vendor/bin/phpunit --coverage-text

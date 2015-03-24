@@ -26,7 +26,7 @@ final class FixtureManager
             'driver'   => 'pdo_mysql',
             'user'     => 'root',
             'password' => '',
-            'dbname'   => 'foobar-test',
+            'dbname'   => 'foobartest',
         );
 
         $config = Setup::createConfiguration($isDevMode);
