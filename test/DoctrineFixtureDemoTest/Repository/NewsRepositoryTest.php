@@ -6,8 +6,9 @@ use DoctrineFixtureDemo\DataFixture\NewsLoad;
 use DoctrineFixtureDemotest\FixtureManager;
 use DoctrineFixtureDemo\Repository\NewsRepository;
 use Doctrine\ORM\Mapping\ClassMetadata;
+use PHPUnit_Framework_TestCase;
 
-class NewsRepositoryTest extends \PHPUnit_Framework_TestCase
+class NewsRepositoryTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
