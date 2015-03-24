@@ -4,10 +4,12 @@ php:
   - 5.4
   - 5.5
   - 5.6
-  - 7
 
 install:
   - composer install --prefer-source
+
+before_script:
+  - mysql -e 'create database IF NOT EXISTS foobar-test;' -uroot
 
 script:
   - vendor/bin/phpunit --coverage-text
