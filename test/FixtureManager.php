@@ -41,25 +41,17 @@ final class FixtureManager
     }
 
     /**
-     * Get SchemaTool
-     */
-    public static function getSchemaTool()
-    {
-        $schemaTool = new SchemaTool(static::getEntityManager());
-
-        return $schemaTool;
-    }
-
-    /**
      * Drop tables and Create tables
      */
     public static function start()
     {
-        static::getSchemaTool()
+        $schemaTool = new SchemaTool(static::getEntityManager());
+
+        $schemaTool
              ->dropSchema(static::getEntityManager()
                             ->getMetadataFactory()
                             ->getAllMetadata());
-        static::getSchemaTool()
+        $schemaTool
              ->createSchema(static::getEntityManager()
                               ->getMetadataFactory()
                               ->getAllMetadata());
