@@ -23,5 +23,6 @@ class NewsRepositoryTest extends \PHPUnit_Framework_TestCase
     {
         $this->fixtureExecutor->execute([new NewsLoad()]);
         $this->assertCount(1, $this->repository->getLatestNews(1));
+        $this->assertInstanceOf('DoctrineFixtureDemo\Entity\News', $this->repository->getLatestNews(1)[0]);
     }
 }
