@@ -51,7 +51,7 @@ final class FixtureManager
     }
 
     /**
-     * Drop tables
+     * Drop tables and Create tables
      */
     public static function start()
     {
@@ -59,18 +59,17 @@ final class FixtureManager
              ->dropSchema(static::getEntityManager()
                             ->getMetadataFactory()
                             ->getAllMetadata());
-    }
-
-    /**
-     * Create tables
-     */
-    public static function getFixtureExecutor()
-    {
         static::getSchemaTool()
              ->createSchema(static::getEntityManager()
                               ->getMetadataFactory()
                               ->getAllMetadata());
+    }
 
+    /**
+     * @return ORMExecutor
+     */
+    public static function getFixtureExecutor()
+    {
         return new ORMExecutor(
             static::getEntityManager(),
             new ORMPurger(static::getEntityManager())
