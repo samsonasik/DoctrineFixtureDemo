@@ -15,7 +15,7 @@ class NewsRepository extends EntityRepository
      */
     public function getLatestNews($limit)
     {
-        $result = $this->_em->getRepository($this->getEntityName())->createQueryBuilder('n')
+        $result = $this->createQueryBuilder('n')
                        ->setFirstResult(0)
                        ->setMaxResults($limit)
                        ->getQuery()->getResult();
