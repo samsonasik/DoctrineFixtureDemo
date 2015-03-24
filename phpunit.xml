@@ -1,0 +1,24 @@
+<phpunit bootstrap="test/bootstrap.php" colors="true">
+    <testsuites>
+        <testsuite name="DoctrineFixtureDemoTest">
+            <directory>./test/DoctrineFixtureDemoTest</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./src</directory>
+            <exclude>
+                <directory suffix=".php">./src/DoctrineFixtureDemo/DataFixture</directory>
+            </exclude>
+        </whitelist>
+        <blacklist>
+            <directory suffix=".php">./vendor/</directory>
+        </blacklist>
+    </filter>
+
+    <logging>
+        <log type="coverage-html" target="./test/html-report/" charset="UTF-8" yui="true" />
+    </logging>
+
+</phpunit>
